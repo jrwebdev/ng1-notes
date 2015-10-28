@@ -1,13 +1,26 @@
-'use strict';
+import 'angular-material/angular-material.css';
+import './styles.css';
 
-require('./styles.css');
+import angular from 'angular';
 
-var angular = require('angular');
+import 'angular-material';
+import 'angular-new-router';
 
-/**
-angular.element(document).ready(function () {
-    angular.bootstrap(document, [app], {
-        strictDi: true
-    });
-});
-**/
+import main from './components/main/main.js';
+
+let app = angular.module('ng1-todo', [
+
+    'ngMaterial',
+    'ngNewRouter',
+
+    main.name
+
+]);
+
+app.controller('MainController', ['$router', ($router) => {
+    $router.config([
+        {path: '/', component: 'main' }
+    ])
+}]);
+
+angular.bootstrap(document, [app.name]);
