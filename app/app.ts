@@ -1,3 +1,23 @@
+'use strict';
+
+import test from './test.ts';
+console.log('app.ts', test);
+
+//import angular from 'angular';
+
+interface Note {
+    title: string,
+    note: string
+}
+
+let notes: Note[] = [];
+
+notes.push({title: 'Note 1 Title', note: 'Note 1 content'});
+notes.push({title: 'Note 2 Title', note: 'Note 2 content'});
+
+console.log(notes);
+
+/**
 import 'angular-material/angular-material.css';
 import './styles.css';
 
@@ -12,7 +32,7 @@ import mainRoute from './routes/main/main';
 // Dumb components
 import notes from './components/notes/notes.module';
 
-let app = angular.module('ng1-todo', [
+let app = angular.module('ng1-notes', [
 
     'ngMaterial',
     'ngNewRouter',
@@ -38,3 +58,4 @@ app.controller('AppController', ['$router', ($router) => {
 }]);
 
 angular.bootstrap(document, [app.name]);
+**/
