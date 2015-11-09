@@ -1,8 +1,6 @@
-import angular from 'angular';
-
-import noteFormDirective from './note-form/note-form.directive';
-import noteListDirective from './note-list/note-list.directive';
-import noteDirective from './note-list/note/note.directive';
+import noteFormDirective from './note-form/note-form.directive.ts';
+import noteListDirective from './note-list/note-list.directive.ts';
+import noteDirective from './note-list/note/note.directive.ts';
 
 let module = angular.module('notes', [])
                     .directive('noteForm', noteFormDirective)

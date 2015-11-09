@@ -1,36 +1,20 @@
+/// <reference path="../typings/angularjs/angular.d.ts" />
+
 'use strict';
 
-import test from './test.ts';
-console.log('app.ts', test);
-
-//import angular from 'angular';
-
-interface Note {
-    title: string,
-    note: string
-}
-
-let notes: Note[] = [];
-
-notes.push({title: 'Note 1 Title', note: 'Note 1 content'});
-notes.push({title: 'Note 2 Title', note: 'Note 2 content'});
-
-console.log(notes);
-
-/**
 import 'angular-material/angular-material.css';
 import './styles.css';
 
-import angular from 'angular';
+import * as angular from 'angular';
 
 import 'angular-material';
 import 'angular-new-router';
 
 // Routes (Smart components)
-import mainRoute from './routes/main/main';
+import mainRoute from './routes/main/main.ts';
 
 // Dumb components
-import notes from './components/notes/notes.module';
+import notes from './components/notes/notes.module.ts';
 
 let app = angular.module('ng1-notes', [
 
@@ -58,4 +42,3 @@ app.controller('AppController', ['$router', ($router) => {
 }]);
 
 angular.bootstrap(document, [app.name]);
-**/

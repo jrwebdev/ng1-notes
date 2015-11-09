@@ -1,10 +1,17 @@
 let directive = () => {
     return {
         restrict: 'E',
-        controller: () => {},
+        controller: function() {
+            this.add = () => {
+                this.onAdd({note: {title: this.note.title, note: this.note.note}});
+                this.note.title = '';
+                this.note.note = '';
+            }
+        },
         controllerAs: 'noteFormCtrl',
         bindToController: {
-            note: '='
+            note: '=',
+            onAdd: '&'
         },
         scope: {},
         template: `
@@ -18,6 +25,7 @@ let directive = () => {
                     <label>Note</label>
                     <textarea name="note" ng-model="noteFormCtrl.note.note"></textarea>
                 </md-input-container>
+                <md-button type="button" ng-click="noteFormCtrl.add()">Add</md-button>
             </div>
         `
     }

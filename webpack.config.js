@@ -11,7 +11,7 @@ module.exports = {
         loaders: [
             {test: /\.css$/, loader: 'style!css'},
             {test: /\.ts$/, loader: 'babel!ts-loader', exclude: /node_modules/},
-            //{test: /\.js$/, loader: 'babel', exclude: /node_modules/}
+            {test: /\.js$/, loader: 'babel', exclude: /node_modules/}
         ]
     },
     devServer: {
