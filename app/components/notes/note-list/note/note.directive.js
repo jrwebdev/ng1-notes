@@ -9,7 +9,7 @@ let directive = () => {
         scope: {},
         template: `
             <div class='note'>
-                <md-checkbox ng-model="noteCtrl.note.isSelected"></md-checkbox>
+                <md-checkbox ng-model="noteCtrl.note.isSelected" aria-label="Select"></md-checkbox>
                 <h2>{{noteCtrl.note.title}}</h2>
                 <p>{{noteCtrl.note.note}}</p>
             </div>

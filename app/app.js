@@ -28,7 +28,7 @@ let app = angular.module('ng1-todo', [
 app.config(['$componentLoaderProvider', ($componentLoaderProvider) => {
     // Change router to use routes/ so components/ can be used for dumb components
     $componentLoaderProvider.setTemplateMapping(name => './routes/' + name + '/' + name + '.html');
-    $componentLoaderProvider.setCtrlNameMapping(name => './routes/' + name + '/' + name + '.js');
+    $componentLoaderProvider.setCtrlNameMapping(name => name + 'Controller');
 }]);
 
 app.controller('AppController', ['$router', ($router) => {

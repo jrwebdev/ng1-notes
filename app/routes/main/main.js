@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-let mainController = () => {
+function MainController () {
 
     this.notes = [{
         title: 'Note 1',
@@ -19,8 +19,7 @@ let mainController = () => {
         note: 'Note 5 note text'
     }];
 
-    console.debug(this);
-};
+}
 
 export default angular.module('app.main', [])
-                      .controller('MainController', mainController);
+                      .controller('mainController', MainController);
