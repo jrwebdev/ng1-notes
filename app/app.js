@@ -6,18 +6,32 @@ import angular from 'angular';
 import 'angular-material';
 import 'angular-new-router';
 
-import main from './components/main/main.js';
+// Routes (Smart components)
+import mainRoute from './routes/main/main';
+
+// Dumb components
+import notes from './components/notes/notes.module';
 
 let app = angular.module('ng1-todo', [
 
     'ngMaterial',
     'ngNewRouter',
 
-    main.name
+    // Routes
+    mainRoute.name,
+
+    // Components
+    notes.name
 
 ]);
 
-app.controller('MainController', ['$router', ($router) => {
+app.config(['$componentLoaderProvider', ($componentLoaderProvider) => {
+    // Change router to use routes/ so components/ can be used for dumb components
+    $componentLoaderProvider.setTemplateMapping(name => './routes/' + name + '/' + name + '.html');
+    $componentLoaderProvider.setCtrlNameMapping(name => './routes/' + name + '/' + name + '.js');
+}]);
+
+app.controller('AppController', ['$router', ($router) => {
     $router.config([
         {path: '/', component: 'main' }
     ])

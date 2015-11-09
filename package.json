@@ -1,5 +1,5 @@
 {
-  "name": "ng1-todo",
+  "name": "ng1-notes",
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrwebdev/ng1-todo.git"
+    "url": "git+https://github.com/jrwebdev/ng1-notes.git"
   },
   "bugs": {
-    "url": "https://github.com/jrwebdev/ng1-todo/issues"
+    "url": "https://github.com/jrwebdev/ng1-notes/issues"
   },
-  "homepage": "https://github.com/jrwebdev/ng1-todo#readme",
+  "homepage": "https://github.com/jrwebdev/ng1-notes#readme",
   "dependencies": {
     "angular": "^1.4.7",
     "angular-animate": "^1.4.7",
