@@ -1,7 +1,4 @@
-interface Note {
-    title: string,
-    note: string
-}
+import {Note} from './note.interface';
 
 let notes: Note[];
 
