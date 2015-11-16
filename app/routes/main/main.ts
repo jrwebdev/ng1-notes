@@ -1,6 +1,6 @@
-import {Note} from './note.interface';
+import {INote} from './note.interface';
 
-let notes: Note[];
+let notes: INote[];
 
 notes = [{
     title: 'Note 1',
@@ -23,7 +23,7 @@ function MainController () {
 
     this.notes = notes;
 
-    this.addNote = (note: Note) => {
+    this.addNote = (note: INote) => {
 
         this.notes.push(note);
 
