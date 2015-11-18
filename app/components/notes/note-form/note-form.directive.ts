@@ -3,9 +3,10 @@ let directive = () => {
         restrict: 'E',
         controller: function() {
             this.add = () => {
+                console.log(this.note);
                 this.onAdd({note: {title: this.note.title, note: this.note.note}});
                 this.note.title = '';
-                this.note.note = '';
+                this.note.note = '';)
             }
         },
         controllerAs: 'noteFormCtrl',
