@@ -1,16 +1,16 @@
 {
   "name": "ng1-notes",
-  "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
   "scripts": {
     "commit": "git-cz",
     "start": "webpack-dev-server --content-base app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrwebdev/ng1-notes.git"
+    "url": "https://github.com/jrwebdev/ng1-notes.git"
   },
   "bugs": {
     "url": "https://github.com/jrwebdev/ng1-notes/issues"
@@ -33,6 +33,7 @@
     "ghooks": "^1.0.0",
     "html-webpack-plugin": "^1.6.2",
     "path": "^0.12.7",
+    "semantic-release": "^4.3.5",
     "style-loader": "^0.13.0",
     "ts-loader": "^0.6.1",
     "tslint": "^2.5.1",
@@ -46,7 +47,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "commit-msg": "validate-commit-msg $1"
+      "commit-msg": "validate-commit-msg"
     }
   }
 }
