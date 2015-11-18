@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "commit": "git-cz",
     "start": "webpack-dev-server --content-base app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +27,9 @@
     "babel": "^5.8.29",
     "babel-core": "^6.1.2",
     "babel-loader": "^6.0.1",
+    "commitizen": "^2.4.6",
     "css-loader": "^0.21.0",
+    "cz-conventional-changelog": "^1.1.4",
     "html-webpack-plugin": "^1.6.2",
     "path": "^0.12.7",
     "style-loader": "^0.13.0",
@@ -35,5 +38,10 @@
     "typescript": "^1.6.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
