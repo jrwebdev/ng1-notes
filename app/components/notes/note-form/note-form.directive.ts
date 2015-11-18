@@ -3,7 +3,7 @@ let directive = () => {
         restrict: 'E',
         controller: function() {
             this.add = () => {
-                this.onAdd({note: {title: this.note.title, note: this.note.note}});
+                //this.onAdd({note: {title: this.note.title, note: this.note.note}});
                 this.note.title = '';
                 this.note.note = '';
             }
