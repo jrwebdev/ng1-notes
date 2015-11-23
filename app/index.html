@@ -5,6 +5,14 @@
     <title>Notes</title>
 </head>
 <body ng-controller="AppController as app">
+
+    <div style='margin: 20px 0'>
+        <div ng-click="app.addNote({title: 'Note 1', note: 'Note 1 content'})">Test Note Add</div>
+        <ul>
+            <li ng-repeat="note in app.notes">{{note.title}} - {{note.note}}</li>
+        </ul>
+    </div>
+
     <div ng-viewport></div>
     <script src="bundle.js"></script>
 </body>

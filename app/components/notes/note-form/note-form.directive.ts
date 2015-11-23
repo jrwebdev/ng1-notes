@@ -6,7 +6,7 @@ let directive = () => {
                 console.log('Note', this.note);
                 this.onAdd({note: {title: this.note.title, note: this.note.note}});
                 this.note.title = '';
-                this.note.note = '';)
+                this.note.note = '';
             }
         },
         controllerAs: 'noteFormCtrl',
