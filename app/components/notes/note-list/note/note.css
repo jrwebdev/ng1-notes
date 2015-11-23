@@ -1,0 +1,8 @@
+.note__header {
+    display: flex;
+    align-items: center;
+}
+
+.note__content {
+    padding: 0 45px;
+}

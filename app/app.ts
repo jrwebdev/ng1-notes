@@ -10,7 +10,6 @@ import * as angular from 'angular';
 
 import 'angular-material';
 import 'angular-new-router';
-import 'ng-redux';
 
 // Routes (Smart components)
 import mainRoute from './routes/main/main.ts';
@@ -19,21 +18,11 @@ import mainRoute from './routes/main/main.ts';
 import notes from './components/notes/notes.module.ts';
 
 // Redux
+import 'ng-redux';
 import {combineReducers} from 'redux';
 import reducers from './reducers.ts';
 import store from './store.ts';
 import {addNote} from './actions.ts';
-
-console.log(store.getState());
-
-let unsubscribe = store.subscribe(() =>
-    console.log(store.getState())
-);
-
-store.dispatch(addNote({title: 'Test', note: 'Test note'}));
-store.dispatch(addNote({title: 'Test 2', note: 'Test note 2'}));
-
-unsubscribe();
 
 let app = angular.module('ng1-notes', [
 
@@ -61,24 +50,10 @@ app.config(['$componentLoaderProvider', ($componentLoaderProvider) => {
     $componentLoaderProvider.setCtrlNameMapping(name => name + 'Controller');
 }]);
 
-app.controller('AppController', ['$router', '$ngRedux', function ($router, $ngRedux) {
-
+app.controller('AppController', ['$router', function ($router) {
     $router.config([
         {path: '/', component: 'main' }
     ]);
-
-    this.mapStateTothis = function (state) {
-        console.log('mapStateTothis', {state});
-        return {
-            notes: state.notes.notes
-        }
-    };
-
-    //let unsubscribe = $ngRedux.connect(this.mapStateTothis, CounterActions)(this);
-    $ngRedux.connect(this.mapStateTothis, {addNote})(this);
-
-    //window.setInterval(() => console.log(this), 10000);
-
 }]);
 
 angular.bootstrap(document, [app.name]);

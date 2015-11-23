@@ -1,5 +1,7 @@
 import {INote} from './note.interface';
+import {addNote} from '../../actions.ts';
 
+/*
 let notes: INote[];
 
 notes = [{
@@ -18,18 +20,33 @@ notes = [{
     title: 'Note 5',
     note: 'Note 5 note text'
 }];
+*/
 
-function MainController () {
+function MainController ($ngRedux) {
 
-    this.notes = notes;
+    //this.notes = notes;
 
+    /**
     this.addNote = (note: INote) => {
 
         this.notes.push(note);
 
     };
+    **/
+
+    this.mapStateTothis = function (state) {
+        console.log('mapStateTothis (MainController)', {state});
+        return {
+            notes: state.notes.notes
+        }
+    };
+
+    //let unsubscribe = $ngRedux.connect(this.mapStateTothis, CounterActions)(this);
+    $ngRedux.connect(this.mapStateTothis, {addNote})(this);
 
 }
+
+MainController.$inject = ['$ngRedux'];
 
 export default angular.module('app.main', [])
                       .controller('mainController', MainController);
