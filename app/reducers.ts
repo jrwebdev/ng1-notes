@@ -34,7 +34,9 @@ function notes(state = INITIAL_STATE, action?: IAction) {
     switch(action.type) {
         case ADD_NOTE:
             //return state;
-            return _.extend({}, state, {notes: state.notes.concat([action.payload.note])});
+            //return _.extend({}, state, {notes: state.notes.concat([action.payload.note])});
+            //return _.extend({}, state, {notes: [...state.notes, action.payload.note]});
+            return {...state, notes: [...state.notes, action.payload.note]};
         default:
             return state;
     }
