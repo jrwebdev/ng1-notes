@@ -1,3 +1,5 @@
+import './note.css';
+
 let directive = () => {
     return {
         restrict: 'E',
@@ -9,9 +11,11 @@ let directive = () => {
         scope: {},
         template: `
             <div class="note">
-                <md-checkbox ng-model="noteCtrl.note.isSelected" aria-label="Select"></md-checkbox>
-                <h2>{{noteCtrl.note.title}}</h2>
-                <p>{{noteCtrl.note.note}}</p>
+                <header class="note__header">
+                    <md-checkbox ng-model="noteCtrl.note.isSelected" aria-label="Select"></md-checkbox>
+                    <h2>{{noteCtrl.note.title}}</h2>
+                </header>
+                <p class="note__content">{{noteCtrl.note.note}}</p>
             </div>
         `
     }

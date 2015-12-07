@@ -10,6 +10,12 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "redux/redux.d.ts": {
+      "commit": "81a7f48ea554e1baf810af905d8bd9e4eb3b4e69"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "81a7f48ea554e1baf810af905d8bd9e4eb3b4e69"
     }
   }
 }
