@@ -24,6 +24,8 @@ notes = [{
 
 function MainController ($ngRedux) {
 
+    console.log('main');
+
     //this.notes = notes;
 
     /**
