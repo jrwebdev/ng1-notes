@@ -29,12 +29,12 @@ interface IAction {
 
 function notes(state = INITIAL_STATE, action?: IAction) {
 
-    console.log('reducer', {state, action});
-
     switch(action.type) {
         case ADD_NOTE:
             //return state;
-            return _.extend({}, state, {notes: state.notes.concat([action.payload.note])});
+            //return _.extend({}, state, {notes: state.notes.concat([action.payload.note])});
+            //return _.extend({}, state, {notes: [...state.notes, action.payload.note]});
+            return {...state, notes: [...state.notes, action.payload.note]};
         default:
             return state;
     }

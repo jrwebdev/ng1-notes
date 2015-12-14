@@ -24,6 +24,8 @@ notes = [{
 
 function MainController ($ngRedux) {
 
+    console.log('main');
+
     //this.notes = notes;
 
     /**
@@ -37,7 +39,6 @@ function MainController ($ngRedux) {
     console.log('abc');
 
     this.mapStateTothis = function (state) {
-        console.log('mapStateTothis (MainController)', {state});
         return {
             notes: state.notes.notes
         }

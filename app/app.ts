@@ -19,10 +19,8 @@ import notes from './components/notes/notes.module.ts';
 
 // Redux
 import 'ng-redux';
-import {combineReducers} from 'redux';
+import * as reduxLogger from 'redux-logger';
 import reducers from './reducers.ts';
-import store from './store.ts';
-import {addNote} from './actions.ts';
 
 let app = angular.module('ng1-notes', [
 
@@ -38,16 +36,22 @@ let app = angular.module('ng1-notes', [
 
 ]);
 
-app.config(($ngReduxProvider) => {
-    //let reducer = combineReducers(reducers);
-    //$ngReduxProvider.createStoreWith(reducer, ['promiseMiddleware']);
-    $ngReduxProvider.createStoreWith(reducers, []);
-});
+app.config([
+    '$componentLoaderProvider', '$ngReduxProvider',
+    ($componentLoaderProvider, $ngReduxProvider) => {
 
-app.config(['$componentLoaderProvider', ($componentLoaderProvider) => {
-    // Change router to use routes/ so components/ can be used for dumb components
-    $componentLoaderProvider.setTemplateMapping(name => './routes/' + name + '/' + name + '.html');
-    $componentLoaderProvider.setCtrlNameMapping(name => name + 'Controller');
+        // Change router to use routes/ so components/ can be used for dumb components
+        $componentLoaderProvider.setTemplateMapping(name => './routes/' + name + '/' + name + '.html');
+        $componentLoaderProvider.setCtrlNameMapping(name => name + 'Controller');
+
+        let logger = reduxLogger({
+            collapsed: true,
+            timestamp: true,
+            duration: true
+        });
+
+        $ngReduxProvider.createStoreWith(reducers, [logger]);
+
 }]);
 
 app.controller('AppController', ['$router', function ($router) {

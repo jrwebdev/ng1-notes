@@ -2,6 +2,7 @@
   "name": "ng1-notes",
   "description": "",
   "main": "src/app.js",
+  "private": true,
   "scripts": {
     "commit": "git-cz",
     "start": "webpack-dev-server --content-base app",
@@ -35,6 +36,7 @@
     "ghooks": "^1.0.0",
     "html-webpack-plugin": "^1.6.2",
     "path": "^0.12.7",
+    "request": "^2.67.0",
     "semantic-release": "^4.3.5",
     "style-loader": "^0.13.0",
     "ts-loader": "^0.6.1",
@@ -51,5 +53,8 @@
     "ghooks": {
       "commit-msg": "validate-commit-msg"
     }
+  },
+  "release": {
+    "getLastRelease": "./get-last-release"
   }
 }
