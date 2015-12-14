@@ -2,7 +2,6 @@
   "name": "ng1-notes",
   "description": "",
   "main": "src/app.js",
-  "private": true,
   "scripts": {
     "commit": "git-cz",
     "start": "webpack-dev-server --content-base app",
