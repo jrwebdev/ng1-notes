@@ -29,8 +29,6 @@ interface IAction {
 
 function notes(state = INITIAL_STATE, action?: IAction) {
 
-    console.log('reducer', {state, action});
-
     switch(action.type) {
         case ADD_NOTE:
             //return state;
