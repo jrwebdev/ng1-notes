@@ -37,7 +37,7 @@
     "html-webpack-plugin": "^1.6.2",
     "path": "^0.12.7",
     "request": "^2.67.0",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "jrwebdev/semantic-release#caribou",
     "style-loader": "^0.13.0",
     "ts-loader": "^0.6.1",
     "tslint": "^2.5.1",
