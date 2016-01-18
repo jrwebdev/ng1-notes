@@ -53,5 +53,8 @@
     "ghooks": {
       "commit-msg": "validate-commit-msg"
     }
+  },
+  "release": {
+    "getLastRelease": "./get-last-release"
   }
 }
